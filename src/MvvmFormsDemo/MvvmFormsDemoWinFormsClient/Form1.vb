@@ -4,12 +4,11 @@ Public Class Form1
 
     Private myMainViewModel As MainViewModel
 
-    Private Sub Form1_Load(sender As Object,
+    Private Async Sub Form1_Load(sender As Object,
                            e As EventArgs) Handles MyBase.Load
 
-        myMainViewModel = New MainViewModel With {
-                .KontaktListe = Kontakt.SampleRecords
-        }
+        myMainViewModel = New MainViewModel
+        Await myMainViewModel.RefreshKontakteAsync()
 
         MvvmManager1.DataContext = myMainViewModel
 

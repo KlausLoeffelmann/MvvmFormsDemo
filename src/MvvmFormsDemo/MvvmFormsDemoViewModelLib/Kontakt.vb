@@ -3,7 +3,7 @@ Imports System.Windows.Input
 Imports ActiveDevelop.MvvmBaseLib
 Imports ActiveDevelop.MvvmBaseLib.Mvvm
 
-Public Class Kontakt
+Public Class KontaktViewModel
     Inherits MvvmViewModelBase
 
     Private myID As Guid
@@ -49,14 +49,14 @@ Public Class Kontakt
         End Set
     End Property
 
-    Public Shared Function SampleRecords() As ObservableCollection(Of Kontakt)
+    Public Shared Function SampleRecords() As ObservableCollection(Of KontaktViewModel)
 
-        Dim collectionToReturn As New ObservableCollection(Of Kontakt)
-        collectionToReturn.Add(New Kontakt With {.ID = Guid.NewGuid, .Firstname = "Adriana", .Lastname = "Löffelmann", .DateOfBirth = #1978-10-13#})
-        collectionToReturn.Add(New Kontakt With {.ID = Guid.NewGuid, .Firstname = "Stephan", .Lastname = "Urgien", .DateOfBirth = #1969-07-24#})
-        collectionToReturn.Add(New Kontakt With {.ID = Guid.NewGuid, .Firstname = "Andreas", .Lastname = "Belke", .DateOfBirth = #1985-11-1#})
-        collectionToReturn.Add(New Kontakt With {.ID = Guid.NewGuid, .Firstname = "Rosenau", .Lastname = "Daniel", .DateOfBirth = #1990-2-1#})
-        collectionToReturn.Add(New Kontakt With {.ID = Guid.NewGuid, .Firstname = "Grottendieck", .Lastname = "Guido", .DateOfBirth = #1968-10-22#})
+        Dim collectionToReturn As New ObservableCollection(Of KontaktViewModel)
+        collectionToReturn.Add(New KontaktViewModel With {.ID = Guid.NewGuid, .Firstname = "Adriana", .Lastname = "Löffelmann", .DateOfBirth = #1978-10-13#})
+        collectionToReturn.Add(New KontaktViewModel With {.ID = Guid.NewGuid, .Firstname = "Stephan", .Lastname = "Urgien", .DateOfBirth = #1969-07-24#})
+        collectionToReturn.Add(New KontaktViewModel With {.ID = Guid.NewGuid, .Firstname = "Andreas", .Lastname = "Belke", .DateOfBirth = #1985-11-1#})
+        collectionToReturn.Add(New KontaktViewModel With {.ID = Guid.NewGuid, .Firstname = "Rosenau", .Lastname = "Daniel", .DateOfBirth = #1990-2-1#})
+        collectionToReturn.Add(New KontaktViewModel With {.ID = Guid.NewGuid, .Firstname = "Grottendieck", .Lastname = "Guido", .DateOfBirth = #1968-10-22#})
         Return collectionToReturn
 
     End Function
