@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.27130.2027
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "MvvmFormsDemoWinFormsClient", "MvvmFormsDemoWinFormsClient\MvvmFormsDemoWinFormsClient.vbproj", "{33016B72-B7C0-413C-91FB-76BCB66A6E0F}"
 EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "MvvmFormsDemoViewModelLib", "MvvmFormsDemoViewModelLib\MvvmFormsDemoViewModelLib.vbproj", "{8419EF9F-5240-495F-B44A-ACD8D8B20B91}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{33016B72-B7C0-413C-91FB-76BCB66A6E0F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{33016B72-B7C0-413C-91FB-76BCB66A6E0F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{33016B72-B7C0-413C-91FB-76BCB66A6E0F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8419EF9F-5240-495F-B44A-ACD8D8B20B91}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8419EF9F-5240-495F-B44A-ACD8D8B20B91}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8419EF9F-5240-495F-B44A-ACD8D8B20B91}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8419EF9F-5240-495F-B44A-ACD8D8B20B91}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
