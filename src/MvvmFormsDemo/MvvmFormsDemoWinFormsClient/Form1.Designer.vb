@@ -28,19 +28,20 @@ Partial Class Form1
         Dim MvvmDataGrid1_LastnameColumn As ActiveDevelop.EntitiesFormsLib.MvvmDataGridColumn = New ActiveDevelop.EntitiesFormsLib.MvvmDataGridColumn()
         Dim MvvmDataGrid1_DateOfBirthColumn As ActiveDevelop.EntitiesFormsLib.MvvmDataGridColumn = New ActiveDevelop.EntitiesFormsLib.MvvmDataGridColumn()
         Me.MvvmDataGrid1 = New ActiveDevelop.EntitiesFormsLib.MvvmDataGrid()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.TextBox3 = New System.Windows.Forms.TextBox()
+        Me.MvvmManager1 = New ActiveDevelop.EntitiesFormsLib.MvvmManager(Me.components)
+        Me.CommandButton1 = New ActiveDevelop.EntitiesFormsLib.CommandButton()
+        Me.CommandButton2 = New ActiveDevelop.EntitiesFormsLib.CommandButton()
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.CommandButton4 = New ActiveDevelop.EntitiesFormsLib.CommandButton()
+        Me.CommandButton3 = New ActiveDevelop.EntitiesFormsLib.CommandButton()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.TextBox4 = New System.Windows.Forms.TextBox()
-        Me.MvvmManager1 = New ActiveDevelop.EntitiesFormsLib.MvvmManager(Me.components)
-        Me.Button3 = New System.Windows.Forms.Button()
-        Me.Button4 = New System.Windows.Forms.Button()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.TextBox3 = New System.Windows.Forms.TextBox()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
         MvvmDataGrid1_IDColumn.TextWrapping = System.Windows.TextWrapping.NoWrap
         MvvmDataGrid1_IDColumn.DataSourceType = GetType(MvvmFormsDemoViewModelLib.Kontakt)
         MvvmDataGrid1_IDColumn.FontWeight = System.Windows.FontWeight.FromOpenTypeWeight(400)
@@ -107,6 +108,7 @@ Partial Class Form1
         MvvmDataGrid1_DateOfBirthColumn.ColumnType = ActiveDevelop.EntitiesFormsLib.ColumnType.TextAndNumbers
         CType(Me.MvvmDataGrid1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.MvvmManager1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
         'MvvmDataGrid1
@@ -144,114 +146,8 @@ Partial Class Form1
         Me.MvvmDataGrid1.SelectedIndex = -1
         Me.MvvmDataGrid1.SelectedItem = Nothing
         Me.MvvmDataGrid1.SelectionMode = System.Windows.Controls.DataGridSelectionMode.[Single]
-        Me.MvvmDataGrid1.Size = New System.Drawing.Size(596, 262)
+        Me.MvvmDataGrid1.Size = New System.Drawing.Size(613, 278)
         Me.MvvmDataGrid1.TabIndex = 0
-        '
-        'Button1
-        '
-        Me.Button1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.MvvmManager1.SetEventBindings(Me.Button1, Nothing)
-        Me.Button1.Location = New System.Drawing.Point(643, 24)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(127, 50)
-        Me.Button1.TabIndex = 1
-        Me.Button1.Text = "Add"
-        Me.Button1.UseVisualStyleBackColor = True
-        '
-        'Button2
-        '
-        Me.Button2.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.MvvmManager1.SetEventBindings(Me.Button2, Nothing)
-        Me.Button2.Location = New System.Drawing.Point(642, 80)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(127, 50)
-        Me.Button2.TabIndex = 2
-        Me.Button2.Text = "Edit"
-        Me.Button2.UseVisualStyleBackColor = True
-        '
-        'TextBox1
-        '
-        Me.TextBox1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.MvvmManager1.SetEventBindings(Me.TextBox1, Nothing)
-        Me.TextBox1.Location = New System.Drawing.Point(131, 346)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(480, 22)
-        Me.TextBox1.TabIndex = 3
-        '
-        'Label1
-        '
-        Me.Label1.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.Label1.AutoSize = True
-        Me.MvvmManager1.SetEventBindings(Me.Label1, Nothing)
-        Me.Label1.Location = New System.Drawing.Point(22, 349)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(45, 17)
-        Me.Label1.TabIndex = 4
-        Me.Label1.Text = "Name"
-        '
-        'Label2
-        '
-        Me.Label2.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.Label2.AutoSize = True
-        Me.MvvmManager1.SetEventBindings(Me.Label2, Nothing)
-        Me.Label2.Location = New System.Drawing.Point(22, 377)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(65, 17)
-        Me.Label2.TabIndex = 6
-        Me.Label2.Text = "Vorname"
-        '
-        'TextBox2
-        '
-        Me.TextBox2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.MvvmManager1.SetEventBindings(Me.TextBox2, Nothing)
-        Me.TextBox2.Location = New System.Drawing.Point(131, 374)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(480, 22)
-        Me.TextBox2.TabIndex = 5
-        '
-        'Label3
-        '
-        Me.Label3.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.Label3.AutoSize = True
-        Me.MvvmManager1.SetEventBindings(Me.Label3, Nothing)
-        Me.Label3.Location = New System.Drawing.Point(22, 321)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(21, 17)
-        Me.Label3.TabIndex = 8
-        Me.Label3.Text = "ID"
-        '
-        'TextBox3
-        '
-        Me.TextBox3.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.MvvmManager1.SetEventBindings(Me.TextBox3, Nothing)
-        Me.TextBox3.Location = New System.Drawing.Point(131, 318)
-        Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.Size = New System.Drawing.Size(480, 22)
-        Me.TextBox3.TabIndex = 7
-        '
-        'Label4
-        '
-        Me.Label4.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.Label4.AutoSize = True
-        Me.MvvmManager1.SetEventBindings(Me.Label4, Nothing)
-        Me.Label4.Location = New System.Drawing.Point(22, 405)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(79, 17)
-        Me.Label4.TabIndex = 10
-        Me.Label4.Text = "Geburtstag"
-        '
-        'TextBox4
-        '
-        Me.TextBox4.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.MvvmManager1.SetEventBindings(Me.TextBox4, Nothing)
-        Me.TextBox4.Location = New System.Drawing.Point(131, 402)
-        Me.TextBox4.Name = "TextBox4"
-        Me.TextBox4.Size = New System.Drawing.Size(480, 22)
-        Me.TextBox4.TabIndex = 9
         '
         'MvvmManager1
         '
@@ -265,69 +161,205 @@ Partial Class Form1
         Me.MvvmManager1.DynamicEventHandlingList = Nothing
         Me.MvvmManager1.HostingForm = Me
         Me.MvvmManager1.HostingUserControl = Nothing
+        Me.MvvmManager1.MvvmBindings.AddPropertyBinding(Me.MvvmDataGrid1, New ActiveDevelop.EntitiesFormsLib.BindingSetting(ActiveDevelop.EntitiesFormsLib.MvvmBindingModes.TwoWay, ActiveDevelop.EntitiesFormsLib.UpdateSourceTriggerSettings.PropertyChangedImmediately), New ActiveDevelop.EntitiesFormsLib.BindingProperty("SelectedItem", GetType(Object)), Nothing, Nothing, New ActiveDevelop.EntitiesFormsLib.BindingProperty("SelectedKontakt", GetType(MvvmFormsDemoViewModelLib.Kontakt)))
+        Me.MvvmManager1.MvvmBindings.AddPropertyBinding(Me.MvvmDataGrid1, New ActiveDevelop.EntitiesFormsLib.BindingSetting(ActiveDevelop.EntitiesFormsLib.MvvmBindingModes.OneWay, ActiveDevelop.EntitiesFormsLib.UpdateSourceTriggerSettings.PropertyChangedImmediately), New ActiveDevelop.EntitiesFormsLib.BindingProperty("ItemsSource", GetType(System.Collections.IEnumerable)), Nothing, Nothing, New ActiveDevelop.EntitiesFormsLib.BindingProperty("KontaktListe", GetType(System.Collections.ObjectModel.ObservableCollection(Of MvvmFormsDemoViewModelLib.Kontakt))))
+        Me.MvvmManager1.MvvmBindings.AddPropertyBinding(Me.CommandButton1, New ActiveDevelop.EntitiesFormsLib.BindingSetting(ActiveDevelop.EntitiesFormsLib.MvvmBindingModes.OneWay, ActiveDevelop.EntitiesFormsLib.UpdateSourceTriggerSettings.LostFocus), New ActiveDevelop.EntitiesFormsLib.BindingProperty("Command", GetType(System.Windows.Input.ICommand)), Nothing, Nothing, New ActiveDevelop.EntitiesFormsLib.BindingProperty("AddCommand", GetType(ActiveDevelop.MvvmBaseLib.Mvvm.RelayCommand)))
+        Me.MvvmManager1.MvvmBindings.AddPropertyBinding(Me.CommandButton2, New ActiveDevelop.EntitiesFormsLib.BindingSetting(ActiveDevelop.EntitiesFormsLib.MvvmBindingModes.OneWay, ActiveDevelop.EntitiesFormsLib.UpdateSourceTriggerSettings.PropertyChangedImmediately), New ActiveDevelop.EntitiesFormsLib.BindingProperty("Command", GetType(System.Windows.Input.ICommand)), Nothing, Nothing, New ActiveDevelop.EntitiesFormsLib.BindingProperty("EditCommand", GetType(ActiveDevelop.MvvmBaseLib.Mvvm.RelayCommand)))
+        Me.MvvmManager1.MvvmBindings.AddPropertyBinding(Me.GroupBox1, New ActiveDevelop.EntitiesFormsLib.BindingSetting(ActiveDevelop.EntitiesFormsLib.MvvmBindingModes.OneWay, ActiveDevelop.EntitiesFormsLib.UpdateSourceTriggerSettings.PropertyChangedImmediately), New ActiveDevelop.EntitiesFormsLib.BindingProperty("Enabled", GetType(Boolean)), GetType(MvvmFormsDemoWinFormsClient.KontaktContentToBooleanConverter), Nothing, New ActiveDevelop.EntitiesFormsLib.BindingProperty("KontaktToEdit", GetType(MvvmFormsDemoViewModelLib.Kontakt)))
+        Me.MvvmManager1.MvvmBindings.AddPropertyBinding(Me.TextBox4, New ActiveDevelop.EntitiesFormsLib.BindingSetting(ActiveDevelop.EntitiesFormsLib.MvvmBindingModes.TwoWay, ActiveDevelop.EntitiesFormsLib.UpdateSourceTriggerSettings.LostFocus), New ActiveDevelop.EntitiesFormsLib.BindingProperty("Text", GetType(String)), GetType(MvvmFormsDemoWinFormsClient.NullableDateTimeOffsetToStringConverter), Nothing, New ActiveDevelop.EntitiesFormsLib.BindingProperty("KontaktToEdit.DateOfBirth", GetType(System.Nullable(Of System.DateTimeOffset))))
+        Me.MvvmManager1.MvvmBindings.AddPropertyBinding(Me.TextBox3, New ActiveDevelop.EntitiesFormsLib.BindingSetting(ActiveDevelop.EntitiesFormsLib.MvvmBindingModes.OneWay, ActiveDevelop.EntitiesFormsLib.UpdateSourceTriggerSettings.LostFocus), New ActiveDevelop.EntitiesFormsLib.BindingProperty("Text", GetType(String)), GetType(MvvmFormsDemoWinFormsClient.GuidToStringConverter), Nothing, New ActiveDevelop.EntitiesFormsLib.BindingProperty("KontaktToEdit.ID", GetType(System.Guid)))
+        Me.MvvmManager1.MvvmBindings.AddPropertyBinding(Me.TextBox2, New ActiveDevelop.EntitiesFormsLib.BindingSetting(ActiveDevelop.EntitiesFormsLib.MvvmBindingModes.TwoWay, ActiveDevelop.EntitiesFormsLib.UpdateSourceTriggerSettings.LostFocus), New ActiveDevelop.EntitiesFormsLib.BindingProperty("Text", GetType(String)), Nothing, Nothing, New ActiveDevelop.EntitiesFormsLib.BindingProperty("KontaktToEdit.Firstname", GetType(String)))
+        Me.MvvmManager1.MvvmBindings.AddPropertyBinding(Me.TextBox1, New ActiveDevelop.EntitiesFormsLib.BindingSetting(ActiveDevelop.EntitiesFormsLib.MvvmBindingModes.TwoWay, ActiveDevelop.EntitiesFormsLib.UpdateSourceTriggerSettings.LostFocus), New ActiveDevelop.EntitiesFormsLib.BindingProperty("Text", GetType(String)), Nothing, Nothing, New ActiveDevelop.EntitiesFormsLib.BindingProperty("KontaktToEdit.Lastname", GetType(String)))
+        Me.MvvmManager1.MvvmBindings.AddPropertyBinding(Me.CommandButton3, New ActiveDevelop.EntitiesFormsLib.BindingSetting(ActiveDevelop.EntitiesFormsLib.MvvmBindingModes.OneWay, ActiveDevelop.EntitiesFormsLib.UpdateSourceTriggerSettings.PropertyChangedImmediately), New ActiveDevelop.EntitiesFormsLib.BindingProperty("Command", GetType(System.Windows.Input.ICommand)), Nothing, Nothing, New ActiveDevelop.EntitiesFormsLib.BindingProperty("OKCommand", GetType(ActiveDevelop.MvvmBaseLib.Mvvm.RelayCommand)))
+        Me.MvvmManager1.MvvmBindings.AddPropertyBinding(Me.CommandButton4, New ActiveDevelop.EntitiesFormsLib.BindingSetting(ActiveDevelop.EntitiesFormsLib.MvvmBindingModes.OneWay, ActiveDevelop.EntitiesFormsLib.UpdateSourceTriggerSettings.PropertyChangedImmediately), New ActiveDevelop.EntitiesFormsLib.BindingProperty("Command", GetType(System.Windows.Input.ICommand)), Nothing, Nothing, New ActiveDevelop.EntitiesFormsLib.BindingProperty("CancelCommand", GetType(ActiveDevelop.MvvmBaseLib.Mvvm.RelayCommand)))
         '
-        'Button3
+        'CommandButton1
         '
-        Me.Button3.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.MvvmManager1.SetEventBindings(Me.Button3, Nothing)
-        Me.Button3.Location = New System.Drawing.Point(642, 318)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(127, 50)
-        Me.Button3.TabIndex = 11
-        Me.Button3.Text = "OK"
-        Me.Button3.UseVisualStyleBackColor = True
+        Me.CommandButton1.Command = Nothing
+        Me.CommandButton1.CommandParameter = Nothing
+        Me.MvvmManager1.SetEventBindings(Me.CommandButton1, Nothing)
+        Me.CommandButton1.Location = New System.Drawing.Point(644, 24)
+        Me.CommandButton1.Name = "CommandButton1"
+        Me.CommandButton1.Size = New System.Drawing.Size(142, 57)
+        Me.CommandButton1.TabIndex = 4
+        Me.CommandButton1.Text = "Add"
+        Me.CommandButton1.UseVisualStyleBackColor = True
         '
-        'Button4
+        'CommandButton2
         '
-        Me.Button4.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.MvvmManager1.SetEventBindings(Me.Button4, Nothing)
-        Me.Button4.Location = New System.Drawing.Point(642, 372)
-        Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(127, 50)
-        Me.Button4.TabIndex = 12
-        Me.Button4.Text = "Cancel"
-        Me.Button4.UseVisualStyleBackColor = True
+        Me.CommandButton2.Command = Nothing
+        Me.CommandButton2.CommandParameter = Nothing
+        Me.MvvmManager1.SetEventBindings(Me.CommandButton2, Nothing)
+        Me.CommandButton2.Location = New System.Drawing.Point(646, 87)
+        Me.CommandButton2.Name = "CommandButton2"
+        Me.CommandButton2.Size = New System.Drawing.Size(141, 52)
+        Me.CommandButton2.TabIndex = 5
+        Me.CommandButton2.Text = "Edit"
+        Me.CommandButton2.UseVisualStyleBackColor = True
+        '
+        'GroupBox1
+        '
+        Me.GroupBox1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.GroupBox1.Controls.Add(Me.CommandButton4)
+        Me.GroupBox1.Controls.Add(Me.CommandButton3)
+        Me.GroupBox1.Controls.Add(Me.Label4)
+        Me.GroupBox1.Controls.Add(Me.TextBox4)
+        Me.GroupBox1.Controls.Add(Me.Label3)
+        Me.GroupBox1.Controls.Add(Me.TextBox3)
+        Me.GroupBox1.Controls.Add(Me.Label2)
+        Me.GroupBox1.Controls.Add(Me.TextBox2)
+        Me.GroupBox1.Controls.Add(Me.Label1)
+        Me.GroupBox1.Controls.Add(Me.TextBox1)
+        Me.MvvmManager1.SetEventBindings(Me.GroupBox1, Nothing)
+        Me.GroupBox1.Location = New System.Drawing.Point(18, 313)
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.Size = New System.Drawing.Size(768, 152)
+        Me.GroupBox1.TabIndex = 3
+        Me.GroupBox1.TabStop = False
+        Me.GroupBox1.Text = "Kontakt-Details:"
+        '
+        'CommandButton4
+        '
+        Me.CommandButton4.Command = Nothing
+        Me.CommandButton4.CommandParameter = Nothing
+        Me.MvvmManager1.SetEventBindings(Me.CommandButton4, Nothing)
+        Me.CommandButton4.Location = New System.Drawing.Point(626, 81)
+        Me.CommandButton4.Name = "CommandButton4"
+        Me.CommandButton4.Size = New System.Drawing.Size(134, 43)
+        Me.CommandButton4.TabIndex = 22
+        Me.CommandButton4.Text = "Cancel"
+        Me.CommandButton4.UseVisualStyleBackColor = True
+        '
+        'CommandButton3
+        '
+        Me.CommandButton3.Command = Nothing
+        Me.CommandButton3.CommandParameter = Nothing
+        Me.MvvmManager1.SetEventBindings(Me.CommandButton3, Nothing)
+        Me.CommandButton3.Location = New System.Drawing.Point(626, 32)
+        Me.CommandButton3.Name = "CommandButton3"
+        Me.CommandButton3.Size = New System.Drawing.Size(134, 43)
+        Me.CommandButton3.TabIndex = 21
+        Me.CommandButton3.Text = "OK"
+        Me.CommandButton3.UseVisualStyleBackColor = True
+        '
+        'Label4
+        '
+        Me.Label4.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.Label4.AutoSize = True
+        Me.MvvmManager1.SetEventBindings(Me.Label4, Nothing)
+        Me.Label4.Location = New System.Drawing.Point(4, 119)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(79, 17)
+        Me.Label4.TabIndex = 20
+        Me.Label4.Text = "Geburtstag"
+        '
+        'TextBox4
+        '
+        Me.TextBox4.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.MvvmManager1.SetEventBindings(Me.TextBox4, Nothing)
+        Me.TextBox4.Location = New System.Drawing.Point(113, 116)
+        Me.TextBox4.Name = "TextBox4"
+        Me.TextBox4.Size = New System.Drawing.Size(497, 22)
+        Me.TextBox4.TabIndex = 19
+        '
+        'Label3
+        '
+        Me.Label3.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.Label3.AutoSize = True
+        Me.MvvmManager1.SetEventBindings(Me.Label3, Nothing)
+        Me.Label3.Location = New System.Drawing.Point(4, 35)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(21, 17)
+        Me.Label3.TabIndex = 18
+        Me.Label3.Text = "ID"
+        '
+        'TextBox3
+        '
+        Me.TextBox3.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.MvvmManager1.SetEventBindings(Me.TextBox3, Nothing)
+        Me.TextBox3.Location = New System.Drawing.Point(113, 32)
+        Me.TextBox3.Name = "TextBox3"
+        Me.TextBox3.Size = New System.Drawing.Size(497, 22)
+        Me.TextBox3.TabIndex = 17
+        '
+        'Label2
+        '
+        Me.Label2.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.Label2.AutoSize = True
+        Me.MvvmManager1.SetEventBindings(Me.Label2, Nothing)
+        Me.Label2.Location = New System.Drawing.Point(4, 91)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(65, 17)
+        Me.Label2.TabIndex = 16
+        Me.Label2.Text = "Vorname"
+        '
+        'TextBox2
+        '
+        Me.TextBox2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.MvvmManager1.SetEventBindings(Me.TextBox2, Nothing)
+        Me.TextBox2.Location = New System.Drawing.Point(113, 88)
+        Me.TextBox2.Name = "TextBox2"
+        Me.TextBox2.Size = New System.Drawing.Size(497, 22)
+        Me.TextBox2.TabIndex = 15
+        '
+        'Label1
+        '
+        Me.Label1.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.Label1.AutoSize = True
+        Me.MvvmManager1.SetEventBindings(Me.Label1, Nothing)
+        Me.Label1.Location = New System.Drawing.Point(4, 63)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(45, 17)
+        Me.Label1.TabIndex = 14
+        Me.Label1.Text = "Name"
+        '
+        'TextBox1
+        '
+        Me.TextBox1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.MvvmManager1.SetEventBindings(Me.TextBox1, Nothing)
+        Me.TextBox1.Location = New System.Drawing.Point(113, 60)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(497, 22)
+        Me.TextBox1.TabIndex = 13
         '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(782, 461)
-        Me.Controls.Add(Me.Button4)
-        Me.Controls.Add(Me.Button3)
-        Me.Controls.Add(Me.Label4)
-        Me.Controls.Add(Me.TextBox4)
-        Me.Controls.Add(Me.Label3)
-        Me.Controls.Add(Me.TextBox3)
-        Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.TextBox2)
-        Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.TextBox1)
-        Me.Controls.Add(Me.Button2)
-        Me.Controls.Add(Me.Button1)
+        Me.ClientSize = New System.Drawing.Size(799, 477)
+        Me.Controls.Add(Me.CommandButton2)
+        Me.Controls.Add(Me.CommandButton1)
+        Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.MvvmDataGrid1)
         Me.MvvmManager1.SetEventBindings(Me, Nothing)
         Me.Name = "Form1"
         Me.Text = "Event Tracker"
         CType(Me.MvvmDataGrid1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.MvvmManager1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupBox1.ResumeLayout(False)
+        Me.GroupBox1.PerformLayout()
         Me.ResumeLayout(False)
-        Me.PerformLayout()
 
     End Sub
 
     Friend WithEvents MvvmDataGrid1 As ActiveDevelop.EntitiesFormsLib.MvvmDataGrid
-    Friend WithEvents Button1 As Button
-    Friend WithEvents Button2 As Button
-    Friend WithEvents TextBox1 As TextBox
-    Friend WithEvents Label1 As Label
-    Friend WithEvents Label2 As Label
-    Friend WithEvents TextBox2 As TextBox
-    Friend WithEvents Label3 As Label
-    Friend WithEvents TextBox3 As TextBox
+    Friend WithEvents MvvmManager1 As ActiveDevelop.EntitiesFormsLib.MvvmManager
+    Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents Label4 As Label
     Friend WithEvents TextBox4 As TextBox
-    Friend WithEvents MvvmManager1 As ActiveDevelop.EntitiesFormsLib.MvvmManager
-    Friend WithEvents Button4 As Button
-    Friend WithEvents Button3 As Button
+    Friend WithEvents Label3 As Label
+    Friend WithEvents TextBox3 As TextBox
+    Friend WithEvents Label2 As Label
+    Friend WithEvents TextBox2 As TextBox
+    Friend WithEvents Label1 As Label
+    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents CommandButton2 As ActiveDevelop.EntitiesFormsLib.CommandButton
+    Friend WithEvents CommandButton1 As ActiveDevelop.EntitiesFormsLib.CommandButton
+    Friend WithEvents CommandButton4 As ActiveDevelop.EntitiesFormsLib.CommandButton
+    Friend WithEvents CommandButton3 As ActiveDevelop.EntitiesFormsLib.CommandButton
 End Class

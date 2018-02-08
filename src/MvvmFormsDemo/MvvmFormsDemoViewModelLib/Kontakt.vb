@@ -1,14 +1,15 @@
 ﻿Imports System.Collections.ObjectModel
+Imports System.Windows.Input
 Imports ActiveDevelop.MvvmBaseLib
+Imports ActiveDevelop.MvvmBaseLib.Mvvm
 
 Public Class Kontakt
-    Inherits BindableBase
+    Inherits MvvmViewModelBase
 
     Private myID As Guid
     Private myFirstname As String
     Private myLastname As String
     Private myDateOfBirth As DateTimeOffset?
-    Private myKontakt1 As Kontakt
 
     <MvvmViewModelInclude>
     Public Property ID As Guid

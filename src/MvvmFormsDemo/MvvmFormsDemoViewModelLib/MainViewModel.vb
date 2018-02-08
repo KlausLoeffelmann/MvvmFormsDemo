@@ -9,6 +9,7 @@ Public Class MainViewModel
     Private myKontaktListe As ObservableCollection(Of Kontakt)
     Private mySelectedKontakt As Kontakt
     Private myKontaktToEdit As Kontakt
+    Private myIsAdding As Boolean
 
     Public Property KontaktListe As ObservableCollection(Of Kontakt)
         Get
@@ -24,7 +25,9 @@ Public Class MainViewModel
             Return mySelectedKontakt
         End Get
         Set(value As Kontakt)
-            SetProperty(mySelectedKontakt, value)
+            If SetProperty(mySelectedKontakt, value) Then
+                EditCommand.RaiseCanExecuteChanged()
+            End If
         End Set
     End Property
 
@@ -40,7 +43,19 @@ Public Class MainViewModel
     Private myAddCommand As New RelayCommand(
         Sub()
             KontaktToEdit = New Kontakt With {.ID = Guid.NewGuid}
-        End Sub)
+            HandleButtons
+            myIsAdding = True
+        End Sub,
+        Function() As Boolean
+            Return myKontaktToEdit Is Nothing
+        End Function)
+
+    Private Sub HandleButtons()
+        AddCommand.RaiseCanExecuteChanged()
+        EditCommand.RaiseCanExecuteChanged()
+        OKCommand.RaiseCanExecuteChanged()
+        CancelCommand.RaiseCanExecuteChanged()
+    End Sub
 
     Public Property AddCommand As RelayCommand
         Get
@@ -53,9 +68,12 @@ Public Class MainViewModel
 
     Private myEditCommand As New RelayCommand(
         Sub()
-            'TODO: Does this work that way??
-            KontaktToEdit = SelectedKontakt
-        End Sub)
+            KontaktToEdit = MvvmViewModelBase.FromModel(Of Kontakt, Kontakt)(SelectedKontakt)
+            HandleButtons()
+        End Sub,
+        Function() As Boolean
+            Return SelectedKontakt IsNot Nothing
+        End Function)
 
     Public Property EditCommand As RelayCommand
         Get
@@ -68,8 +86,19 @@ Public Class MainViewModel
 
     Private myOkCommand As New RelayCommand(
         Sub()
-
-        End Sub)
+            If myIsAdding Then
+                KontaktListe.Add(KontaktToEdit)
+            Else
+                SelectedKontakt.DateOfBirth = KontaktToEdit.DateOfBirth
+                SelectedKontakt.Firstname = KontaktToEdit.Firstname
+                SelectedKontakt.Lastname = KontaktToEdit.Lastname
+            End If
+            KontaktToEdit = Nothing
+            HandleButtons()
+        End Sub,
+        Function() As Boolean
+            Return myKontaktToEdit IsNot Nothing
+        End Function)
 
     Public Property OKCommand As RelayCommand
         Get
@@ -82,8 +111,12 @@ Public Class MainViewModel
 
     Private myCancelCommand As New RelayCommand(
         Sub()
-
-        End Sub)
+            KontaktToEdit = Nothing
+            HandleButtons()
+        End Sub,
+        Function() As Boolean
+            Return myKontaktToEdit IsNot Nothing
+        End Function)
 
     Public Property CancelCommand As RelayCommand
         Get
