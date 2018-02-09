@@ -1,4 +1,5 @@
 Imports System.Collections.ObjectModel
+Imports System.Net.Http
 Imports ActiveDevelop.MvvmBaseLib
 Imports ActiveDevelop.MvvmBaseLib.Mvvm
 Imports DataLayer
@@ -8,9 +9,12 @@ Imports MvvmFormsDemoViewModelLib
 Public Class MainViewModel
     Inherits BindableBase
 
-    Private myKontaktListe As ObservableCollection(Of KontaktViewModel)
-    Private mySelectedKontakt As KontaktViewModel
-    Private myKontaktToEdit As KontaktViewModel
+    Friend Const WEBAPI_URL = "http://localhost:5678/api/"
+    Friend Shared ReadOnly HttpClient As New HttpClient
+
+    Private myKontaktListe As ObservableCollection(Of ContactViewModel)
+    Private mySelectedKontakt As ContactViewModel
+    Private myKontaktToEdit As ContactViewModel
     Private myIsAdding As Boolean
 
     Public Async Function RefreshKontakteAsync() As Task
@@ -20,8 +24,8 @@ Public Class MainViewModel
                            Into Count
 
         If anzahlItem = 0 Then
-            For Each item In KontaktViewModel.SampleRecords
-                oc.Kontakte.Add(New Kontakt With
+            For Each item In ContactViewModel.SampleRecords
+                oc.Kontakte.Add(New Contact With
                                 {.ID = item.ID,
                                  .LastName = item.Lastname,
                                  .FirstName = item.Firstname,
@@ -30,49 +34,42 @@ Public Class MainViewModel
             Await oc.SaveChangesAsync()
         End If
 
-        KontaktListe = New ObservableCollection(Of KontaktViewModel)(
-            Await (From item In oc.Kontakte
-                   Order By item.LastName
-                   Select New KontaktViewModel With
-                               {.ID = item.ID,
-                                .Lastname = item.LastName,
-                                .Firstname = item.FirstName,
-                                .DateOfBirth = item.DateOfBirth}).ToListAsync)
+        Contacts = Await ContactViewModel.GetContactsAsync()
 
     End Function
 
-    Public Property KontaktListe As ObservableCollection(Of KontaktViewModel)
+    Public Property Contacts As ObservableCollection(Of ContactViewModel)
         Get
             Return myKontaktListe
         End Get
-        Set(value As ObservableCollection(Of KontaktViewModel))
+        Set(value As ObservableCollection(Of ContactViewModel))
             SetProperty(myKontaktListe, value)
         End Set
     End Property
 
-    Public Property SelectedKontakt As KontaktViewModel
+    Public Property SelectedContact As ContactViewModel
         Get
             Return mySelectedKontakt
         End Get
-        Set(value As KontaktViewModel)
+        Set(value As ContactViewModel)
             If SetProperty(mySelectedKontakt, value) Then
                 EditCommand.RaiseCanExecuteChanged()
             End If
         End Set
     End Property
 
-    Public Property KontaktToEdit As KontaktViewModel
+    Public Property ContactToEdit As ContactViewModel
         Get
             Return myKontaktToEdit
         End Get
-        Set(value As KontaktViewModel)
+        Set(value As ContactViewModel)
             SetProperty(myKontaktToEdit, value)
         End Set
     End Property
 
     Private myAddCommand As New RelayCommand(
         Sub()
-            KontaktToEdit = New KontaktViewModel With {.ID = Guid.NewGuid}
+            ContactToEdit = New ContactViewModel With {.ID = Guid.NewGuid}
             HandleButtons()
             myIsAdding = True
         End Sub,
@@ -98,11 +95,11 @@ Public Class MainViewModel
 
     Private myEditCommand As New RelayCommand(
         Sub()
-            KontaktToEdit = MvvmViewModelBase.FromModel(Of KontaktViewModel, KontaktViewModel)(SelectedKontakt)
+            ContactToEdit = MvvmViewModelBase.FromModel(Of ContactViewModel, ContactViewModel)(SelectedContact)
             HandleButtons()
         End Sub,
         Function() As Boolean
-            Return SelectedKontakt IsNot Nothing
+            Return SelectedContact IsNot Nothing
         End Function)
 
     Public Property EditCommand As RelayCommand
@@ -120,20 +117,20 @@ Public Class MainViewModel
                 If myIsAdding Then
                     Dim oc = New EventRecorderContext
 
-                    oc.Kontakte.Add(New Kontakt With
-                                {.ID = KontaktToEdit.ID,
-                                 .FirstName = KontaktToEdit.Firstname,
-                                 .LastName = KontaktToEdit.Lastname,
-                                 .DateOfBirth = KontaktToEdit.DateOfBirth})
+                    oc.Kontakte.Add(New Contact With
+                                {.ID = ContactToEdit.ID,
+                                 .FirstName = ContactToEdit.Firstname,
+                                 .LastName = ContactToEdit.Lastname,
+                                 .DateOfBirth = ContactToEdit.DateOfBirth})
 
                     Await oc.SaveChangesAsync()
                     Await RefreshKontakteAsync()
                 Else
-                    SelectedKontakt.DateOfBirth = KontaktToEdit.DateOfBirth
-                    SelectedKontakt.Firstname = KontaktToEdit.Firstname
-                    SelectedKontakt.Lastname = KontaktToEdit.Lastname
+                    SelectedContact.DateOfBirth = ContactToEdit.DateOfBirth
+                    SelectedContact.Firstname = ContactToEdit.Firstname
+                    SelectedContact.Lastname = ContactToEdit.Lastname
                 End If
-                KontaktToEdit = Nothing
+                ContactToEdit = Nothing
                 HandleButtons()
             Catch ex As Exception
             End Try
@@ -153,7 +150,7 @@ Public Class MainViewModel
 
     Private myCancelCommand As New RelayCommand(
         Sub()
-            KontaktToEdit = Nothing
+            ContactToEdit = Nothing
             HandleButtons()
         End Sub,
         Function() As Boolean

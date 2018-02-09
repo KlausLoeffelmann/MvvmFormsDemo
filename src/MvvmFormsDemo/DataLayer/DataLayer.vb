@@ -6,7 +6,7 @@ Imports Microsoft.EntityFrameworkCore
 Public Class EventRecorderContext
     Inherits DbContext
 
-    Public Property Kontakte As DbSet(Of Kontakt)
+    Public Property Kontakte As DbSet(Of Contact)
     Public Property Events As DbSet(Of [Event])
 
     Protected Overrides Sub OnConfiguring(optionsBuilder As DbContextOptionsBuilder)
@@ -16,7 +16,7 @@ Public Class EventRecorderContext
     End Sub
 End Class
 
-Public Class Kontakt
+Public Class Contact
 
     <Key>
     Public Property ID As Guid
@@ -33,7 +33,7 @@ Public Class [Event]
 
     <Key>
     Public Property IdEvent As Guid
-    Public Property Kontakt As Kontakt
+    Public Property Kontakt As Contact
     Public Property StartTime As TimeSpan?
     Public Property EndTime As TimeSpan?
     Public Property BookingDate As DateTimeOffset?

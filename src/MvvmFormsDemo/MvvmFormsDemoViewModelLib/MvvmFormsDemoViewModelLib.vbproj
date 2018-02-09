@@ -8,10 +8,15 @@
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="2.0.1" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="2.0.1" />
     <PackageReference Include="MvvmFormsBase" Version="2.3.0-Beta" />
+    <PackageReference Include="Newtonsoft.Json" Version="10.0.3" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\DataLayer\DataLayer.vbproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="HttpSupport\" />
   </ItemGroup>
 
 </Project>
