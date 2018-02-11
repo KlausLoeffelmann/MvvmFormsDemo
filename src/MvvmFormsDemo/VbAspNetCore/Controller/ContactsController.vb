@@ -1,4 +1,6 @@
-﻿Imports DataLayer
+﻿Imports System.Net
+Imports System.Net.Http
+Imports DataLayer
 Imports Microsoft.AspNetCore.Authorization
 Imports Microsoft.AspNetCore.Mvc
 Imports Microsoft.EntityFrameworkCore
@@ -26,12 +28,21 @@ Public Class ContactsController
                             Where(Function(item) item.ID = id).FirstOrDefaultAsync
     End Function
 
-    ' PUT api/contact/guid
-    <HttpPut("{id}")>
-    Public Async Sub Put(ByVal id As Integer, <FromBody> ByVal contact As Contact)
+    ' PUT api/contacts
+    <HttpPut()>
+    Public Async Sub Put(<FromBody> ByVal contact As Contact)
         Dim oc = New EventRecorderContext
         oc.Update(contact)
         Await oc.SaveChangesAsync()
     End Sub
+
+    ' PUT api/contacts/contact
+    <HttpPost()>
+    Public Async Function Post(<FromBody> ByVal contact As Contact) As Task(Of ActionResult)
+        Dim oc = New EventRecorderContext
+        oc.Add(contact)
+        Await oc.SaveChangesAsync()
+        Return New OkObjectResult(42)
+    End Function
 
 End Class

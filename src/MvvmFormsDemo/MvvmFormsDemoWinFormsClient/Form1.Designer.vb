@@ -48,7 +48,7 @@ Partial Class Form1
         MvvmDataGrid1_IDColumn.Width = -1.0R
         MvvmDataGrid1_IDColumn.WidthLengthUnitType = System.Windows.Controls.DataGridLengthUnitType.Star
         MvvmDataGrid1_IDColumn.Visibility = System.Windows.Visibility.Visible
-        MvvmDataGrid1_IDColumn.CellPadding = New System.Windows.Forms.Padding(0, 0, 0, 0)
+        MvvmDataGrid1_IDColumn.CellPadding = New System.Windows.Forms.Padding(4)
         MvvmDataGrid1_IDColumn.Header = "ID"
         MvvmDataGrid1_IDColumn.IsEnabled = True
         MvvmDataGrid1_IDColumn.BackgroundColor = System.Drawing.Color.Empty
@@ -64,7 +64,7 @@ Partial Class Form1
         MvvmDataGrid1_FirstnameColumn.Width = -1.0R
         MvvmDataGrid1_FirstnameColumn.WidthLengthUnitType = System.Windows.Controls.DataGridLengthUnitType.Star
         MvvmDataGrid1_FirstnameColumn.Visibility = System.Windows.Visibility.Visible
-        MvvmDataGrid1_FirstnameColumn.CellPadding = New System.Windows.Forms.Padding(0, 0, 0, 0)
+        MvvmDataGrid1_FirstnameColumn.CellPadding = New System.Windows.Forms.Padding(4)
         MvvmDataGrid1_FirstnameColumn.Header = "Firstname"
         MvvmDataGrid1_FirstnameColumn.IsEnabled = True
         MvvmDataGrid1_FirstnameColumn.BackgroundColor = System.Drawing.Color.Empty
@@ -80,7 +80,7 @@ Partial Class Form1
         MvvmDataGrid1_LastnameColumn.Width = -1.0R
         MvvmDataGrid1_LastnameColumn.WidthLengthUnitType = System.Windows.Controls.DataGridLengthUnitType.Star
         MvvmDataGrid1_LastnameColumn.Visibility = System.Windows.Visibility.Visible
-        MvvmDataGrid1_LastnameColumn.CellPadding = New System.Windows.Forms.Padding(0, 0, 0, 0)
+        MvvmDataGrid1_LastnameColumn.CellPadding = New System.Windows.Forms.Padding(4)
         MvvmDataGrid1_LastnameColumn.Header = "Lastname"
         MvvmDataGrid1_LastnameColumn.IsEnabled = True
         MvvmDataGrid1_LastnameColumn.BackgroundColor = System.Drawing.Color.Empty
@@ -96,7 +96,7 @@ Partial Class Form1
         MvvmDataGrid1_DateOfBirthColumn.Width = -1.0R
         MvvmDataGrid1_DateOfBirthColumn.WidthLengthUnitType = System.Windows.Controls.DataGridLengthUnitType.Star
         MvvmDataGrid1_DateOfBirthColumn.Visibility = System.Windows.Visibility.Visible
-        MvvmDataGrid1_DateOfBirthColumn.CellPadding = New System.Windows.Forms.Padding(0, 0, 0, 0)
+        MvvmDataGrid1_DateOfBirthColumn.CellPadding = New System.Windows.Forms.Padding(4)
         MvvmDataGrid1_DateOfBirthColumn.Header = "DateOfBirth"
         MvvmDataGrid1_DateOfBirthColumn.IsEnabled = True
         MvvmDataGrid1_DateOfBirthColumn.BackgroundColor = System.Drawing.Color.Empty
@@ -123,9 +123,9 @@ Partial Class Form1
         Me.MvvmDataGrid1.CanUserSortColumns = True
         MvvmDataGrid1_IDColumn.PropertyCellBindings.Add(New ActiveDevelop.EntitiesFormsLib.BindingSetting(ActiveDevelop.EntitiesFormsLib.MvvmBindingModes.OneWay, ActiveDevelop.EntitiesFormsLib.UpdateSourceTriggerSettings.LostFocus), New ActiveDevelop.EntitiesFormsLib.BindingProperty("Content", GetType(ActiveDevelop.EntitiesFormsLib.MvvmDataGridColumn)), Nothing, Nothing, New ActiveDevelop.EntitiesFormsLib.BindingProperty("ID", GetType(MvvmFormsDemoViewModelLib.ContactViewModel)))
         Me.MvvmDataGrid1.Columns.Add(MvvmDataGrid1_IDColumn)
-        MvvmDataGrid1_FirstnameColumn.PropertyCellBindings.Add(New ActiveDevelop.EntitiesFormsLib.BindingSetting(ActiveDevelop.EntitiesFormsLib.MvvmBindingModes.TwoWay, ActiveDevelop.EntitiesFormsLib.UpdateSourceTriggerSettings.LostFocus), New ActiveDevelop.EntitiesFormsLib.BindingProperty("Content", GetType(ActiveDevelop.EntitiesFormsLib.MvvmDataGridColumn)), Nothing, Nothing, New ActiveDevelop.EntitiesFormsLib.BindingProperty("Firstname", GetType(MvvmFormsDemoViewModelLib.ContactViewModel)))
+        MvvmDataGrid1_FirstnameColumn.PropertyCellBindings.Add(New ActiveDevelop.EntitiesFormsLib.BindingSetting(ActiveDevelop.EntitiesFormsLib.MvvmBindingModes.TwoWay, ActiveDevelop.EntitiesFormsLib.UpdateSourceTriggerSettings.LostFocus), New ActiveDevelop.EntitiesFormsLib.BindingProperty("Content", GetType(ActiveDevelop.EntitiesFormsLib.MvvmDataGridColumn)), Nothing, Nothing, New ActiveDevelop.EntitiesFormsLib.BindingProperty("FirstName", GetType(MvvmFormsDemoViewModelLib.ContactViewModel)))
         Me.MvvmDataGrid1.Columns.Add(MvvmDataGrid1_FirstnameColumn)
-        MvvmDataGrid1_LastnameColumn.PropertyCellBindings.Add(New ActiveDevelop.EntitiesFormsLib.BindingSetting(ActiveDevelop.EntitiesFormsLib.MvvmBindingModes.TwoWay, ActiveDevelop.EntitiesFormsLib.UpdateSourceTriggerSettings.LostFocus), New ActiveDevelop.EntitiesFormsLib.BindingProperty("Content", GetType(ActiveDevelop.EntitiesFormsLib.MvvmDataGridColumn)), Nothing, Nothing, New ActiveDevelop.EntitiesFormsLib.BindingProperty("Lastname", GetType(MvvmFormsDemoViewModelLib.ContactViewModel)))
+        MvvmDataGrid1_LastnameColumn.PropertyCellBindings.Add(New ActiveDevelop.EntitiesFormsLib.BindingSetting(ActiveDevelop.EntitiesFormsLib.MvvmBindingModes.TwoWay, ActiveDevelop.EntitiesFormsLib.UpdateSourceTriggerSettings.LostFocus), New ActiveDevelop.EntitiesFormsLib.BindingProperty("Content", GetType(ActiveDevelop.EntitiesFormsLib.MvvmDataGridColumn)), Nothing, Nothing, New ActiveDevelop.EntitiesFormsLib.BindingProperty("LastName", GetType(MvvmFormsDemoViewModelLib.ContactViewModel)))
         Me.MvvmDataGrid1.Columns.Add(MvvmDataGrid1_LastnameColumn)
         MvvmDataGrid1_DateOfBirthColumn.PropertyCellBindings.Add(New ActiveDevelop.EntitiesFormsLib.BindingSetting(ActiveDevelop.EntitiesFormsLib.MvvmBindingModes.OneWay, ActiveDevelop.EntitiesFormsLib.UpdateSourceTriggerSettings.LostFocus), New ActiveDevelop.EntitiesFormsLib.BindingProperty("Content", GetType(ActiveDevelop.EntitiesFormsLib.MvvmDataGridColumn)), Nothing, Nothing, New ActiveDevelop.EntitiesFormsLib.BindingProperty("DateOfBirth", GetType(MvvmFormsDemoViewModelLib.ContactViewModel)))
         Me.MvvmDataGrid1.Columns.Add(MvvmDataGrid1_DateOfBirthColumn)
@@ -168,8 +168,8 @@ Partial Class Form1
         Me.MvvmManager1.MvvmBindings.AddPropertyBinding(Me.GroupBox1, New ActiveDevelop.EntitiesFormsLib.BindingSetting(ActiveDevelop.EntitiesFormsLib.MvvmBindingModes.OneWay, ActiveDevelop.EntitiesFormsLib.UpdateSourceTriggerSettings.PropertyChangedImmediately), New ActiveDevelop.EntitiesFormsLib.BindingProperty("Enabled", GetType(Boolean)), GetType(MvvmFormsDemoWinFormsClient.KontaktContentToBooleanConverter), Nothing, New ActiveDevelop.EntitiesFormsLib.BindingProperty("ContactToEdit", GetType(MvvmFormsDemoViewModelLib.ContactViewModel)))
         Me.MvvmManager1.MvvmBindings.AddPropertyBinding(Me.TextBox4, New ActiveDevelop.EntitiesFormsLib.BindingSetting(ActiveDevelop.EntitiesFormsLib.MvvmBindingModes.TwoWay, ActiveDevelop.EntitiesFormsLib.UpdateSourceTriggerSettings.LostFocus), New ActiveDevelop.EntitiesFormsLib.BindingProperty("Text", GetType(String)), GetType(MvvmFormsDemoWinFormsClient.NullableDateTimeOffsetToStringConverter), Nothing, New ActiveDevelop.EntitiesFormsLib.BindingProperty("ContactToEdit.DateOfBirth", GetType(System.Nullable(Of System.DateTimeOffset))))
         Me.MvvmManager1.MvvmBindings.AddPropertyBinding(Me.TextBox3, New ActiveDevelop.EntitiesFormsLib.BindingSetting(ActiveDevelop.EntitiesFormsLib.MvvmBindingModes.OneWay, ActiveDevelop.EntitiesFormsLib.UpdateSourceTriggerSettings.LostFocus), New ActiveDevelop.EntitiesFormsLib.BindingProperty("Text", GetType(String)), GetType(MvvmFormsDemoWinFormsClient.GuidToStringConverter), Nothing, New ActiveDevelop.EntitiesFormsLib.BindingProperty("ContactToEdit.ID", GetType(System.Guid)))
-        Me.MvvmManager1.MvvmBindings.AddPropertyBinding(Me.TextBox2, New ActiveDevelop.EntitiesFormsLib.BindingSetting(ActiveDevelop.EntitiesFormsLib.MvvmBindingModes.TwoWay, ActiveDevelop.EntitiesFormsLib.UpdateSourceTriggerSettings.LostFocus), New ActiveDevelop.EntitiesFormsLib.BindingProperty("Text", GetType(String)), Nothing, Nothing, New ActiveDevelop.EntitiesFormsLib.BindingProperty("ContactToEdit.Firstname", GetType(String)))
-        Me.MvvmManager1.MvvmBindings.AddPropertyBinding(Me.TextBox1, New ActiveDevelop.EntitiesFormsLib.BindingSetting(ActiveDevelop.EntitiesFormsLib.MvvmBindingModes.TwoWay, ActiveDevelop.EntitiesFormsLib.UpdateSourceTriggerSettings.LostFocus), New ActiveDevelop.EntitiesFormsLib.BindingProperty("Text", GetType(String)), Nothing, Nothing, New ActiveDevelop.EntitiesFormsLib.BindingProperty("ContactToEdit.Lastname", GetType(String)))
+        Me.MvvmManager1.MvvmBindings.AddPropertyBinding(Me.TextBox2, New ActiveDevelop.EntitiesFormsLib.BindingSetting(ActiveDevelop.EntitiesFormsLib.MvvmBindingModes.TwoWay, ActiveDevelop.EntitiesFormsLib.UpdateSourceTriggerSettings.LostFocus), New ActiveDevelop.EntitiesFormsLib.BindingProperty("Text", GetType(String)), Nothing, Nothing, New ActiveDevelop.EntitiesFormsLib.BindingProperty("ContactToEdit.FirstName", GetType(String)))
+        Me.MvvmManager1.MvvmBindings.AddPropertyBinding(Me.TextBox1, New ActiveDevelop.EntitiesFormsLib.BindingSetting(ActiveDevelop.EntitiesFormsLib.MvvmBindingModes.TwoWay, ActiveDevelop.EntitiesFormsLib.UpdateSourceTriggerSettings.LostFocus), New ActiveDevelop.EntitiesFormsLib.BindingProperty("Text", GetType(String)), Nothing, Nothing, New ActiveDevelop.EntitiesFormsLib.BindingProperty("ContactToEdit.LastName", GetType(String)))
         Me.MvvmManager1.MvvmBindings.AddPropertyBinding(Me.CommandButton3, New ActiveDevelop.EntitiesFormsLib.BindingSetting(ActiveDevelop.EntitiesFormsLib.MvvmBindingModes.OneWay, ActiveDevelop.EntitiesFormsLib.UpdateSourceTriggerSettings.PropertyChangedImmediately), New ActiveDevelop.EntitiesFormsLib.BindingProperty("Command", GetType(System.Windows.Input.ICommand)), Nothing, Nothing, New ActiveDevelop.EntitiesFormsLib.BindingProperty("OKCommand", GetType(ActiveDevelop.MvvmBaseLib.Mvvm.RelayCommand)))
         Me.MvvmManager1.MvvmBindings.AddPropertyBinding(Me.CommandButton4, New ActiveDevelop.EntitiesFormsLib.BindingSetting(ActiveDevelop.EntitiesFormsLib.MvvmBindingModes.OneWay, ActiveDevelop.EntitiesFormsLib.UpdateSourceTriggerSettings.PropertyChangedImmediately), New ActiveDevelop.EntitiesFormsLib.BindingProperty("Command", GetType(System.Windows.Input.ICommand)), Nothing, Nothing, New ActiveDevelop.EntitiesFormsLib.BindingProperty("CancelCommand", GetType(ActiveDevelop.MvvmBaseLib.Mvvm.RelayCommand)))
         '

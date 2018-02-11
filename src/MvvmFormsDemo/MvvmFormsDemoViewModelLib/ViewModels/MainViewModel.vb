@@ -115,16 +115,11 @@ Public Class MainViewModel
         Async Sub()
             Try
                 If myIsAdding Then
-                    Dim oc = New EventRecorderContext
-
-                    oc.Kontakte.Add(New Contact With
-                                {.ID = ContactToEdit.ID,
-                                 .FirstName = ContactToEdit.Firstname,
-                                 .LastName = ContactToEdit.Lastname,
-                                 .DateOfBirth = ContactToEdit.DateOfBirth})
-
-                    Await oc.SaveChangesAsync()
-                    Await RefreshKontakteAsync()
+                    If Await myKontaktToEdit.PostContactAsync = Net.HttpStatusCode.OK Then
+                        Await RefreshKontakteAsync()
+                    Else
+                        'TODO: Signal Error message.
+                    End If
                 Else
                     SelectedContact.DateOfBirth = ContactToEdit.DateOfBirth
                     SelectedContact.Firstname = ContactToEdit.Firstname

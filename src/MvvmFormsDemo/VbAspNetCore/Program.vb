@@ -1,17 +1,17 @@
 Imports System
 Imports System.IO
+Imports Microsoft.AspNetCore
 Imports Microsoft.AspNetCore.Hosting
 
 Module Program
     Sub Main(args As String())
-        Dim host = New WebHostBuilder().
-        UseKestrel().
-        UseContentRoot(Directory.GetCurrentDirectory()).
-        UseIISIntegration().
-        UseStartup(Of StartUp).
-        UseApplicationInsights().
-        Build()
-
-        host.Run()
+        BuildWebHost(args).Run
     End Sub
+
+    Public Function BuildWebHost(args As String()) As IWebHost
+        Return WebHost.CreateDefaultBuilder(args).
+               UseStartup(Of Startup).
+               UseApplicationInsights.
+               Build
+    End Function
 End Module

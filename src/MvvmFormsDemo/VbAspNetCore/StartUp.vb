@@ -1,8 +1,4 @@
-﻿Imports System
-Imports System.Collections.Generic
-Imports System.Linq
-Imports System.Threading.Tasks
-Imports Microsoft.AspNetCore.Builder
+﻿Imports Microsoft.AspNetCore.Builder
 Imports Microsoft.AspNetCore.Hosting
 Imports Microsoft.Extensions.Configuration
 Imports Microsoft.Extensions.DependencyInjection
@@ -25,10 +21,16 @@ Public Class Startup
     End Sub
 
     ' This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-    Public Sub Configure(ByVal app As IApplicationBuilder, ByVal env As IHostingEnvironment, ByVal loggerFactory As ILoggerFactory)
+    Public Sub Configure(ByVal app As IApplicationBuilder,
+                         ByVal env As IHostingEnvironment,
+                         ByVal loggerFactory As ILoggerFactory)
+
         loggerFactory.AddConsole(Configuration.GetSection("Logging"))
         loggerFactory.AddDebug()
 
-        app.UseMvc()
+        app.
+        UseStaticFiles.
+        UseMvc
+
     End Sub
 End Class
